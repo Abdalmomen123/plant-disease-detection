@@ -1,115 +1,109 @@
-# 🌿 Plant Disease Detection using ResNet50
+# 🌿 Plant Disease Detection App
 
-## 📌 Overview
-
-This project is a **deep learning image classification model** that detects plant diseases from leaf images using transfer learning with ResNet50.
-
-The model is trained on a dataset of plant leaf images and can classify different plant conditions such as healthy leaves and various diseases.
-
----
-
-## 🧠 Model Architecture
-
-The model uses **ResNet50 (pretrained on ImageNet)** as a feature extractor, followed by custom classification layers.
-
-- Base Model: ResNet50 (frozen layers)
-- Global Average Pooling
-- Dense Layer (ReLU)
-- Output Layer (Softmax)
-
----
-
-## 📊 Dataset
-
-The dataset consists of labeled images of plant leaves organized into folders by class.
-
-Dataset structure:
-
-dataset/
-├── class_1/
-├── class_2/
-└── ...
-
-The dataset is automatically split using TensorFlow:
-
-- **80% Training**
-- **20% Validation**
-
----
-
-## ▶️ Training the Model
-
-Run:
-
-python train.py
-
-The script will:
-
-- Check if a trained model already exists
-- Train a new model if not found
-- Save the model as:
-
-plant_disease_model.keras
-
----
-
-## 🔍 Making Predictions
-
-Run:
-
-python predict.py
-
----
-
-## 📂 Project Structure
-
-plant-disease-resnet50
-│
-├── dataset/
-├── config.py
-├── train.py
-├── predict.py
-├── plant_disease_model.keras
-└── README.md
-
----
-
-## 📈 Results
-
-The model achieves high accuracy using transfer learning (typically **85–95%** depending on dataset size and training time).
+An AI-powered web application that detects plant diseases from leaf images using **Deep Learning** and provides **confidence scores** and **treatment suggestions**.
 
 ---
 
 ## 🚀 Features
 
-- Transfer learning with ResNet50
-- Automatic dataset splitting
-- Model saving & loading
-- Image prediction script
-- Clean and modular structure
+- 🌿 **Image Upload** – Upload plant leaf images
+- 🤖 **AI Disease Detection** – Predicts plant diseases using a trained model
+- 📊 **Confidence Score** – Shows how confident the model is
+- 🖥️ **User-Friendly UI** – Interactive interface built with Streamlit
 
 ---
 
-## 🔧 Future Improvements
+## 🖼️ Demo
 
-- Fine-tune ResNet50 layers
-- Add data augmentation
-- Implement Grad-CAM visualization
-- Deploy as a web app
+![Upload Section](assets/Screenshot-1.png) ![Results](assets/Screenshot-2.png)
+
+```
 
 ---
 
-## 📚 Technologies Used
+## 🧠 How It Works
 
-- Python
-- TensorFlow / Keras
-- NumPy
-- Matplotlib
+1. User uploads a plant leaf image
+2. Image is preprocessed (resized, normalized)
+3. The trained deep learning model analyzes the image
+4. The system predicts:
+   - Disease name
+   - Confidence score
+
+---
+
+## 🛠️ Tech Stack
+
+- **Python**
+- **Streamlit**
+- **TensorFlow / Keras**
+- **NumPy**
+- **Pillow (PIL)** for image processing
+
+---
+
+## 📂 Project Structure
+
+```
+
+plant-disease-app/
+│
+├── app.py
+├── plant_disease_model # Trained model
+├── config.py
+├── predict.py
+├── train.py
+├── assets/
+└── README.md
+
+````
+
+---
+
+## ⚙️ Installation
+
+1. Clone the repository:
+2. Install dependencies:
+
+---
+
+## ▶️ Run the App
+
+```bash
+streamlit run app.py
+````
+
+---
+
+## 📊 Example Output
+
+- 🦠 Disease: **Tomato_Late_blight**
+- 📈 Confidence: **87.45%**
+
+---
+
+## 💡 Future Improvements
+
+- 📱 Mobile-friendly UI
+- 📸 Real-time camera detection
+- 💊 Treatment Suggestions for detected disease
+- 🧠 Improved model accuracy with larger dataset
+- ☁️ Deploy online (Streamlit Cloud / Hugging Face)
 
 ---
 
 ## 👤 Author
 
-GitHub: https://github.com/Abdalmomen123
+**Abdalmomen Mohammed Awad Mohammed**
+
+---
+
+## ⭐ Support
+
+If you found this useful:
+
+- Star ⭐ the repo
+- Share feedback
+- Suggest improvements
 
 ---

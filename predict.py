@@ -7,12 +7,14 @@ import config
 model = tf.keras.models.load_model(config.MODEL_PATH)
 
 
-def predict_image(img_path):
-    img = image.load_img(img_path, target_size=config.IMG_SIZE)
-    img_array = image.img_to_array(img)
-    img_array = np.expand_dims(img_array, axis=0)
+def predict_image(image):
+    img = image.resize((224, 224))
+    img = np.array(img) / 255.0
+    img = np.expand_dims(img, axis=0)
 
-    predictions = model.predict(img_array)
-    predicted_class = config.class_names[np.argmax(predictions)]
+    prediction = model.predict(img)
+    
+    predicted_class = config.class_names[np.argmax(prediction)]
+    confidence = np.max(prediction)
 
-    print("Prediction:", predicted_class)
+    return predicted_class, confidence
