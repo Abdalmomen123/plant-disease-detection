@@ -17,8 +17,6 @@ An AI-powered web application that detects plant diseases from leaf images using
 
 ![Upload Section](assets/Screenshot-1.png) ![Results](assets/Screenshot-2.png)
 
-```
-
 ---
 
 ## 🧠 How It Works
@@ -44,8 +42,6 @@ An AI-powered web application that detects plant diseases from leaf images using
 
 ## 📂 Project Structure
 
-```
-
 plant-disease-app/
 │
 ├── app.py
@@ -55,8 +51,6 @@ plant-disease-app/
 ├── train.py
 ├── assets/
 └── README.md
-
-````
 
 ---
 
@@ -69,9 +63,9 @@ plant-disease-app/
 
 ## ▶️ Run the App
 
-```bash
+```
 streamlit run app.py
-````
+```
 
 ---
 
